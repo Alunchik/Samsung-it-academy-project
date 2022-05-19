@@ -20,11 +20,8 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
-            android:id="@+id/action_signUp_to_testsPage3"
-            app:destination="@id/testsPage" />
+            android:id="@+id/action_signUp_to_main_nav_graph2"
+            app:destination="@id/main_nav_graph" />
     </fragment>
-    <fragment
-        android:id="@+id/testsPage"
-        android:name="com.example.samsung_project.TestsPage"
-        android:label="TestsPage" />
+    <include app:graph="@navigation/main_nav_graph" />
 </navigation>

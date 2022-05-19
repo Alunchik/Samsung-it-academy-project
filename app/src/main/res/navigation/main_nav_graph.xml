@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_addTest_to_profile"
             app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_addTest_to_addQuestion3"
+            app:destination="@id/add_question_fragment" />
     </fragment>
     <fragment
         android:id="@+id/profile"
@@ -30,6 +33,15 @@
         android:label="TestsPage" >
         <action
             android:id="@+id/action_testsPage_to_addTest"
+            app:destination="@id/addTest" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_question_fragment"
+        android:name="com.example.samsung_project.AddQuestion"
+        android:label="fragment_add_question2"
+        tools:layout="@layout/fragment_add_question2" >
+        <action
+            android:id="@+id/action_addQuestion3_to_addTest"
             app:destination="@id/addTest" />
     </fragment>
 </navigation>

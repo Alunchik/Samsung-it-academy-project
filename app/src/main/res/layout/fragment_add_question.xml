@@ -8,40 +8,39 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/add_question_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <EditText
-            android:id="@+id/editTextTextPersonName4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Test name"
-            android:inputType="textPersonName"
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="419dp"
+            android:layout_height="76dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/answersView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/questionsView"
+            android:id="@+id/answersView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/addQuestionButton"
+            app:layout_constraintBottom_toTopOf="@+id/questionAdded"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+            app:layout_constraintTop_toBottomOf="@+id/questionText">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <Button
-            android:id="@+id/addQuestionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add question"
+            android:id="@+id/questionAdded"
+            android:layout_width="115dp"
+            android:layout_height="53dp"
+            android:onClick="questionAdded"
+            android:text="Add"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answersView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

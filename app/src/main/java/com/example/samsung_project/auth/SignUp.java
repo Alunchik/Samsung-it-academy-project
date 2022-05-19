@@ -52,7 +52,7 @@ public void CreateAccount(String email, String password){
 //        }
 //    });
     NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-    navController.navigate(R.id.testsPage);
+    navController.navigate(R.id.main_nav_graph);
 }
 
 
