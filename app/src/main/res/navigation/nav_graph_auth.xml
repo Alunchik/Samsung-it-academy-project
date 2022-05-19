@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_auth"
+    app:startDestination="@id/SignIn">
+
+    <fragment
+        android:id="@+id/SignIn"
+        android:name="com.example.samsung_project.auth.SignIn"
+        android:label="fragment_s_ign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_SignIn_to_signUp"
+            app:destination="@id/signUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.samsung_project.auth.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_testsPage3"
+            app:destination="@id/testsPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/testsPage"
+        android:name="com.example.samsung_project.TestsPage"
+        android:label="TestsPage" />
+</navigation>

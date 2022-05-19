@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/fragment_add_test.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/fragment_blank.xml" value="0.1" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/fragment_blank2.xml" value="0.22" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/fragment_blank3.xml" value="0.2046875" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/fragment_profile.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/fragment_s_ign_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/fragment_sign_up.xml" value="0.24444444444444444" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/layout/tests_page_blank.xml" value="0.22" />
+        <entry key="..\:/Users/Foxxy/AndroidStudioProjects/Samsung_project/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1398148148148148" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/testsPage">
+
+    <fragment
+        android:id="@+id/addTest"
+        android:name="com.example.samsung_project.AddTest"
+        android:label="AddTest" >
+        <action
+            android:id="@+id/action_addTest_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.samsung_project.Profile"
+        android:label="Profile" >
+        <action
+            android:id="@+id/action_profile_to_addTest"
+            app:destination="@id/addTest" />
+        <action
+            android:id="@+id/action_profile_to_testsPage"
+            app:destination="@id/testsPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/testsPage"
+        android:name="com.example.samsung_project.TestsPage"
+        android:label="TestsPage" >
+        <action
+            android:id="@+id/action_testsPage_to_addTest"
+            app:destination="@id/addTest" />
+    </fragment>
+</navigation>
