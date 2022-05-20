@@ -14,6 +14,16 @@ import java.util.ArrayList;
 
 public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.AnswerHolder> {
 
+    private static ArrayList<Answer> answers_transaction = new ArrayList<>();
+
+    public static void setAnswers_transaction(ArrayList<Answer> answers_transaction) {
+        AnswerAdapter.answers_transaction = answers_transaction;
+    }
+
+    public static ArrayList<Answer> getAnswers_transaction() {
+        return answers_transaction;
+    }
+
     ArrayList<Answer> answers = new ArrayList<>();
 
     public AnswerAdapter(ArrayList<Answer> answers) {

@@ -10,14 +10,21 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.samsung_project.databinding.FragmentAddQuestionBinding;
 import com.example.samsung_project.databinding.FragmentAddTestBinding;
+import com.example.samsung_project.test.Answer;
 import com.example.samsung_project.test.AnswerAdapter;
+import com.example.samsung_project.test.Question;
+import com.example.samsung_project.test.QuestionAdapter;
+
+import java.util.ArrayList;
 
 public class AddTest extends Fragment {
 
 
-    private AnswerAdapter answerAdapter;
+    private QuestionAdapter questionAdapter;
     private FragmentAddTestBinding binding;
 
     @Override
@@ -31,12 +38,19 @@ public class AddTest extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentAddTestBinding.bind(view);
+        ArrayList<Question> questions = new ArrayList<>();
+        questionAdapter = new QuestionAdapter(questions);
+        binding.questionsView.setAdapter(questionAdapter);
+        binding.questionsView.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.addQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GoToAddQuestion();
             }
         });
+        if(Question.getCurrentQuestion()!=null){
+
+        }
     }
 
     public void GoToAddQuestion(){

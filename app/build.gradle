@@ -3,6 +3,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs'
 }
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdk 31

@@ -3,6 +3,17 @@ package com.example.samsung_project.test;
 import java.util.ArrayList;
 
 public class Question {
+
+    public static Question getCurrentQuestion() {
+        return CurrentQuestion;
+    }
+
+    public static void setCurrentQuestion(Question currentQuestion) {
+        CurrentQuestion = currentQuestion;
+    }
+
+    public static Question CurrentQuestion;
+
     private String test_id;
     private int type;
     private String question;

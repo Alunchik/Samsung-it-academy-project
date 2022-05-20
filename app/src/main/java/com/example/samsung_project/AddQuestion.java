@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.samsung_project.databinding.FragmentAddQuestionBinding;
 import com.example.samsung_project.test.Answer;
 import com.example.samsung_project.test.AnswerAdapter;
+import com.example.samsung_project.test.Question;
 
 import java.util.ArrayList;
 
@@ -36,9 +37,6 @@ public class AddQuestion extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentAddQuestionBinding.bind(view);
         ArrayList<Answer> answers = new ArrayList<>();
-        for (int i=0; i<5; i++){
-            answers.add(new Answer("1", false));
-        }
         answerAdapter = new AnswerAdapter(answers);
         binding.answersView.setAdapter(answerAdapter);
         binding.answersView.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -52,6 +50,8 @@ public class AddQuestion extends Fragment {
         binding.newAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Question question = new Question("1",binding.questionName.getText().toString(), answers, 1)
+                Question.setCurrentQuestion(question);
                 answers.add(0, new Answer(binding.answerName.getText().toString(), false));
                 answerAdapter.notifyItemInserted(0);
             }
