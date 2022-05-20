@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.samsung_project.R;
 import com.example.samsung_project.databinding.AnswerRecyclerViewItemBinding;
 import com.example.samsung_project.databinding.FragmentAddTestBinding;
+import com.example.samsung_project.databinding.QuestionItemBinding;
 
 import java.util.ArrayList;
 
@@ -17,8 +18,8 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
 
     ArrayList<Question> questions = new ArrayList<>();
 
-    public QuestionAdapter(ArrayList<Answer> questions) {
-        this.questions = q;
+    public QuestionAdapter(ArrayList<Question> questions) {
+        this.questions = questions;
     }
 
     private FragmentAddTestBinding binding;
@@ -26,7 +27,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
     @NonNull
     @Override
     public QuestionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ite, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.question_item, parent, false);
         return new QuestionHolder(view);
     }
 
@@ -37,18 +38,18 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
 
     @Override
     public int getItemCount() {
-        return answers.size();
+        return questions.size();
     }
 
     static class QuestionHolder extends RecyclerView.ViewHolder {
 
-        private AnswerRecyclerViewItemBinding binding;
+        private QuestionItemBinding binding;
 
 
         public QuestionHolder(@NonNull View itemView) {
             super(itemView);
-            binding = AnswerRecyclerViewItemBinding.bind(itemView);
-            binding.answerText.setText("1");
+            binding = QuestionItemBinding.bind(itemView);
+            binding.textView.setText("1");
         }
     }
 }
