@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.samsung_project.databinding.FragmentAddQuestionBinding;
@@ -43,6 +45,15 @@ public class AddQuestion extends Fragment {
         binding.questionAdded.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.addTest);
+            }
+        });
+        binding.newAnswer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                answers.add(0, new Answer(binding.answerName.getText().toString(), false));
+                answerAdapter.notifyItemInserted(0);
             }
         });
     }

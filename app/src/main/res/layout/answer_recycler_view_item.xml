@@ -20,13 +20,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <EditText
             android:id="@+id/answerText"
             android:layout_width="330dp"
             android:layout_height="55dp"
-            android:text="TextView"
             app:layout_constraintEnd_toStartOf="@+id/checkCorrect"
             tools:layout_editor_absoluteY="-2dp" />
+
+        <ImageButton
+            android:id="@+id/editAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/checkCorrect"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

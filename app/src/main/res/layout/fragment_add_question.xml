@@ -12,35 +12,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/questionText"
-            android:layout_width="419dp"
-            android:layout_height="76dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/answersView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/answersView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/questionAdded"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/questionText">
+            <EditText
+                android:id="@+id/questionName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/questionAdded"
-            android:layout_width="115dp"
-            android:layout_height="53dp"
-            android:onClick="questionAdded"
-            android:text="Add"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answersView" />
+                <EditText
+                    android:id="@+id/answerName"
+                    android:layout_width="353dp"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/newAnswer"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:text="new" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/answersView"
+                android:layout_width="match_parent"
+                android:layout_height="560dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <Button
+                    android:id="@+id/questionAdded"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:text="Add" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
