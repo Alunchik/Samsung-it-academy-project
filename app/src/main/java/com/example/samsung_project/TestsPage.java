@@ -12,6 +12,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.samsung_project.databinding.TestsPageBlankBinding;
+import com.example.samsung_project.model.Test;
 
 
 public class TestsPage extends Fragment {
@@ -38,6 +39,8 @@ public class TestsPage extends Fragment {
     }
 
     private void AddTestClick(View view){
+        Test.currentTest=new Test("1");
+        Test.currentTest.setName(" ");
         NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
         navController.navigate(R.id.addTest);
     }

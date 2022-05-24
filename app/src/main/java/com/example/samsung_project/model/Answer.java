@@ -1,4 +1,4 @@
-package com.example.samsung_project.test;
+package com.example.samsung_project.model;
 
 public class Answer {
     private String text;

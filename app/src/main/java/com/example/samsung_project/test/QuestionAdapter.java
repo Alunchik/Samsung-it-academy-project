@@ -8,9 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.samsung_project.R;
-import com.example.samsung_project.databinding.AnswerRecyclerViewItemBinding;
 import com.example.samsung_project.databinding.FragmentAddTestBinding;
 import com.example.samsung_project.databinding.QuestionItemBinding;
+import com.example.samsung_project.model.Question;
 
 import java.util.ArrayList;
 
@@ -31,9 +31,10 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
         return new QuestionHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull QuestionHolder holder, int position) {
-        holder.binding.
+        //holder.binding.
     }
 
     @Override

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.samsung_project.R;
 import com.example.samsung_project.databinding.AnswerRecyclerViewItemBinding;
+import com.example.samsung_project.model.Answer;
 
 import java.util.ArrayList;
 
