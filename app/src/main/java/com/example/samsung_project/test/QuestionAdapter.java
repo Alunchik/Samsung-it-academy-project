@@ -64,7 +64,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
         public QuestionHolder(@NonNull View itemView) {
             super(itemView);
             binding = QuestionItemBinding.bind(itemView);
-            binding.QuestionTextView.setText(" ");
         }
     }
 }

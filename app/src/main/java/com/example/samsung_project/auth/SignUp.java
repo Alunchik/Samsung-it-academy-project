@@ -37,6 +37,13 @@ public class SignUp extends Fragment {
                 CreateAccount(binding.EmailSignUp.getText().toString(), binding.PasswordSignUp.getText().toString());
             }
         });
+        binding.goToSIgnIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.SignIn);
+            }
+        });
     }
 
 

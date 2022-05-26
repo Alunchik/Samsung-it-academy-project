@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_signUp_to_main_nav_graph2"
             app:destination="@id/main_nav_graph" />
+        <action
+            android:id="@+id/action_signUp_to_SignIn"
+            app:destination="@id/SignIn" />
     </fragment>
     <include app:graph="@navigation/main_nav_graph" />
 </navigation>
