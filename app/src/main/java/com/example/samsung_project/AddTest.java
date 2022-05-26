@@ -13,15 +13,10 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.samsung_project.databinding.FragmentAddTestBinding;
-import com.example.samsung_project.model.Answer;
 import com.example.samsung_project.model.Question;
-import com.example.samsung_project.test.QuestionAdapter;
 import com.example.samsung_project.model.Test;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.example.samsung_project.test.QuestionAdapter;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -44,41 +39,25 @@ public class AddTest extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentAddTestBinding.bind(view);
-        testDataBase = FirebaseDatabase.getInstance().getReference(Test.currentTest.getName());
-        questionDataBase = FirebaseDatabase.getInstance().getReference();
+        binding.testName.setText(Test.currentTest.getName());
+//        testDataBase = FirebaseDatabase.getInstance().getReference(Test.currentTest.getName());
+//        questionDataBase = FirebaseDatabase.getInstance().getReference();
 
-
-        ArrayList<Question> questions = new ArrayList<>();
-        testDataBase.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                questions.add(new Question(Test.currentTest.getId(), snapshot.getValue(String.class), new ArrayList<Answer>(), 1));
-                questionAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        ArrayList<Question> questions = Test.currentTest.getQuestions();
         questionAdapter = new QuestionAdapter(questions);
         binding.questionsView.setAdapter(questionAdapter);
         binding.questionsView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        binding.saveTestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Test.currentTest.setQuestions(questions);
+                Test.existingTests.add(Test.currentTest);
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.testsPage);
+            }
+        });
+
         binding.addQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,8 +70,9 @@ public class AddTest extends Fragment {
     }
 
     public void GoToAddQuestion(){
-        testDataBase.push().setValue(binding.testName.getText().toString());
-        Test.currentTest.setName(binding.testName.getText().toString());
+        //testDataBase.push().setValue(binding.testName.getText().toString());
+        if(binding.testName.getText()==null){}
+        else {Test.currentTest.setName(binding.testName.getText().toString());}
         NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
         navController.navigate(R.id.add_question_fragment);
     }

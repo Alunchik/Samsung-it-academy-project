@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_addTest_to_addQuestion3"
             app:destination="@id/add_question_fragment" />
+        <action
+            android:id="@+id/action_addTest_to_testsPage"
+            app:destination="@id/testsPage" />
     </fragment>
     <fragment
         android:id="@+id/profile"

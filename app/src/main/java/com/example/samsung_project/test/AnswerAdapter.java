@@ -65,7 +65,7 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.AnswerHold
         public AnswerHolder(@NonNull View itemView) {
             super(itemView);
             binding = AnswerRecyclerViewItemBinding.bind(itemView);
-            binding.answerText.setText("1");
+            binding.answerText.setText(" ");
         }
     }
 }

@@ -40,6 +40,8 @@ dependencies {
     def fragment_version = "1.4.1"
     def nav_version = "2.4.2"
 
+
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
     implementation "androidx.fragment:fragment:$fragment_version"

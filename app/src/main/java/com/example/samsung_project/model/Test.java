@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Test {
     private String id;
 
-    public Test(String id) {
-        this.id = id;
+    public Test(String name) {
+        this.name = name;
         this.questions = new ArrayList<Question>();
     }
 
@@ -14,6 +14,18 @@ public class Test {
     private String description;
     private  ArrayList<Question> questions;
     public static Test currentTest;
+    public static ArrayList<Test> existingTests = generateTests();
+
+    private static ArrayList<Test> generateTests(){
+        String[] names ={"Russian language test", "Student stress level", "Your opinion about clothing brands"};
+        ArrayList<Test> tests = new ArrayList<Test>();
+        for(int i=0; i< names.length; i++) {
+            Test test = new Test(names[i]);
+            tests.add(test);
+        }
+        return tests;
+    }
+
 
     public String getId() {
         return id;

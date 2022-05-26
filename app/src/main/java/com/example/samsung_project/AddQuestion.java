@@ -14,11 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.samsung_project.databinding.FragmentAddQuestionBinding;
 import com.example.samsung_project.model.Answer;
-import com.example.samsung_project.test.AnswerAdapter;
 import com.example.samsung_project.model.Question;
 import com.example.samsung_project.model.Test;
+import com.example.samsung_project.test.AnswerAdapter;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -50,15 +49,19 @@ public class AddQuestion extends Fragment {
         binding.questionAdded.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                QUESTION_KEY = binding.questionName.getText().toString()==""? "unnamed_question" : binding.questionName.getText().toString();
+//                answersDataBase = FirebaseDatabase.getInstance().getReference(QUESTION_KEY);
+//                questionsDataBase = FirebaseDatabase.getInstance().getReference(TEST_KEY);
+//                questionsDataBase.child(TEST_KEY).push().setValue(QUESTION_KEY);
+//                for (Answer answer:answers) {
+//                    answersDataBase.child(TEST_KEY).child(QUESTION_KEY).push().setValue(answer);
+//                }
+               Question question = new Question("1", binding.questionName.getText().toString(), answers, 1);
+               ArrayList<Question> qests= Test.currentTest.getQuestions();
+               qests.add(0, question);
+                Test.currentTest.setQuestions(qests);
                 NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
                 navController.navigate(R.id.addTest);
-                QUESTION_KEY = binding.questionName.getText().toString()==""? "unnamed_question" : binding.questionName.getText().toString();
-                answersDataBase = FirebaseDatabase.getInstance().getReference(QUESTION_KEY);
-                questionsDataBase = FirebaseDatabase.getInstance().getReference(TEST_KEY);
-                questionsDataBase.child(TEST_KEY).push().setValue(QUESTION_KEY);
-                for (Answer answer:answers) {
-                    answersDataBase.child(TEST_KEY).child(QUESTION_KEY).push().setValue(answer);
-                }
             }
         });
         binding.newAnswer.setOnClickListener(new View.OnClickListener() {

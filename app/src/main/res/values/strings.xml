@@ -3,11 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_test">Add test</string>
-    <string-array name="answers">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
+    <string name="enter_test_name">Enter test name</string>
+    <string name="TestNameEdit">Name</string>
+    <string name="enterTestNameTextVIew">Enter</string>
+    <string name="sign_up_text_view">Sign up</string>
+    <string name="email_hint">email</string>
+    <string name="name_edit_text">Name</string>
+    <string name="sign_in_button_text">Sign in</string>
 </resources>

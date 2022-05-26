@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_SignIn_to_signUp"
             app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_SignIn_to_main_nav_graph"
+            app:destination="@id/main_nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/signUp"
